@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Brandon's Audio Visualizer</title>
+	<link rel="stylesheet" href="assets/css/styles.css">
+	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans|Open+Sans&display=swap" rel="stylesheet">
+	<script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule="" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+	<div id="visualizer">
+		<canvas width="1280px" height="720px"></canvas>
+		<div id="myGUI">
+			<ion-icon id="left" name="return-left" data-fill="#ffffff"></ion-icon>
+			<ion-icon id="playPause" name="play" data-playing="no" data-fill="#ffffff"></ion-icon>
+			<ion-icon id="right" name="return-right" data-fill="#ffffff"></ion-icon>
+		</div>
+		<p id="trackNum" text-color="#ffffff">0 / 0</p>
+		<p id="songName" text-color="#ffffff">???</p>
+		<p id="credit" text-color = "#ffffff">all music by <a href="https://dcruzships.github.io" target="_blank">me</a> as <a href="https://www.youtube.com/watch?v=XcForynThz0" target="_blank">altona meadows</a></p>
+	</div>
+	<audio></audio>
+
+	<script src="assets/js/main.js"></script>
+	<script type="text/javascript" src="assets/js/dat.gui.js"></script>
+	<script type="text/javascript" src="assets/js/gui.js"></script>
+
+</body>
+</html>

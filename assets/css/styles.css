@@ -1,0 +1,65 @@
+html{
+  height: 100%;
+}
+
+body
+{
+  background: black;
+  font-family: 'Open Sans', sans-serif;
+}
+
+#visualizer
+{
+  position: relative;
+  width: 1280px;
+  height: 720px;
+  left: 110px;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+canvas
+{
+  display: block;
+}
+
+#myGUI, #trackNum
+{
+  position: absolute;
+  display: block;
+  top: 80%;
+  color: #ffffff;
+}
+
+#trackNum
+{
+  left: 87%;
+  top: 75%;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 64px;
+}
+
+#songName
+{
+  position: absolute;
+  display: none;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 64px;
+  top: 75%;
+  left: 43%;
+  color: #ffffff;
+}
+
+#credit
+{
+  position: absolute;
+  display: block;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 25px;
+  top: 2%;
+  left: 2%;
+  color: #ffffff;
+}
+
+#playPause, #left, #right { font-size: 128px; color: #ffffff; transition: font-size .8s; }
+
+#playPause:hover, #left:hover, #right:hover, #fullscreen:hover { font-size: 140px; }
