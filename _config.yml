@@ -1,0 +1,7 @@
+name: altonameds_radio
+title: altonameds_radio
+markdown: kramdown
+highlighter: rouge
+timezone: America/New_York
+url: https://dcruzships.github.io/altonameds_radio
+baseurl: "/altonameds_radio"
