@@ -22,7 +22,7 @@ canvas
   display: block;
 }
 
-#myGUI, #trackNum
+#myGUI, #trackNum, #seek, #fsButton
 {
   position: absolute;
   display: block;
@@ -34,6 +34,22 @@ canvas
 {
   left: 87%;
   top: 75%;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 64px;
+}
+
+#seek
+{
+  left: 35%;
+  top: 75%;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 64px;
+}
+
+#fsButton
+{
+  left: 90%;
+  top: 70%;
   font-family: 'IBM Plex Sans', sans-serif;
   font-size: 64px;
 }

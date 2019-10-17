@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<title>altonameds_radio</title>
+	<title>am_radio</title>
 	<link rel="stylesheet" href="assets/css/styles.css">
 	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans|Open+Sans&display=swap" rel="stylesheet">
 	<script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
@@ -16,13 +16,16 @@
 			<ion-icon id="playPause" name="play" data-playing="no" data-fill="#ffffff"></ion-icon>
 			<ion-icon id="right" name="return-right" data-fill="#ffffff"></ion-icon>
 		</div>
+		<ion-icon id="fsButton" name="qr-scanner" data-fill="#ffffff"></ion-icon>
+		<p id="seek">0</p>
 		<p id="trackNum" text-color="#ffffff">0 / 0</p>
 		<p id="songName" text-color="#ffffff">???</p>
 		<p id="credit" text-color = "#ffffff">all music by <a href="https://dcruzships.github.io" target="_blank">me</a> as <a href="https://www.youtube.com/watch?v=XcForynThz0" target="_blank">altona meadows</a></p>
 	</div>
-	<audio></audio>
+	<audio ontimeupdate="document.getElementById('seek').innerHTML = secondsToHms(Math.floor(this.currentTime));"></audio>
 
 	<script src="assets/js/main.js"></script>
+	<script src="assets/js/helper.js"></script>
 	<script type="text/javascript" src="assets/js/dat.gui.js"></script>
 	<script type="text/javascript" src="assets/js/gui.js"></script>
 

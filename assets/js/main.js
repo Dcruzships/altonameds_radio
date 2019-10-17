@@ -7,6 +7,7 @@ let mainGUI;
 let playButton;
 let leftButton;
 let rightButton;
+let seek;
 let waveSpace = 0;
 let waveRange = 0;
 let mousePos = 0;
@@ -50,6 +51,7 @@ function init()
   playButton = document.querySelector("#playPause");
   leftButton = document.querySelector("#left");
   rightButton = document.querySelector("#right");
+  seek = document.querySelector("#seek");
   mainGUI = new myGUI();
   mainGUI.setupUI();
   update();
@@ -107,6 +109,10 @@ function setupCanvas()
   {
       mousePos = getMousePos(canvasElement, evt);
   }, false);
+
+  document.querySelector("#fsButton").onclick = _ =>{
+    requestFullscreen(canvasElement);
+  };
 }
 
 function update()
@@ -248,6 +254,7 @@ function manipulatePixels(ctx)
     playButton.style.color = "black";
     leftButton.style.color = "black";
     rightButton.style.color = "black";
+    fs
     document.querySelector("#trackNum").style.color = "black";
     document.querySelector("#songName").style.color = "black";
     document.querySelector("#credit").style.color = "black";
@@ -262,40 +269,3 @@ function manipulatePixels(ctx)
     document.querySelector("#credit").style.color = "white";
   }
 }
-
-// HELPER FUNCTIONS
-function makeColor(red, green, blue, alpha){
-    var color='rgba('+red+','+green+','+blue+', '+alpha+')';
-    return color;
-}
-
-function changeTrack(direction)
-{
-  if(direction == 0) { trackIndex--; }
-  else { trackIndex++; }
-  if(trackIndex<0) { trackIndex = 3; }
-  if(trackIndex>3) { trackIndex = 0; }
-  try { audioElement.src = SOUND_PATH[trackIndex]; }
-  catch (e) {  audioCtx.resume(); }
-}
-
-function getMousePos(canvas, evt) {
-    var rect = canvas.getBoundingClientRect();
-    return {
-      x: evt.clientX - rect.left,
-      y: evt.clientY - rect.top
-    };
-}
-
-function requestFullscreen(element) {
-  if (element.requestFullscreen) {
-    element.requestFullscreen();
-  } else if (element.mozRequestFullscreen) {
-    element.mozRequestFullscreen();
-  } else if (element.mozRequestFullScreen) { // camel-cased 'S' was changed to 's' in spec
-    element.mozRequestFullScreen();
-  } else if (element.webkitRequestFullscreen) {
-    element.webkitRequestFullscreen();
-  }
-  // .. and do nothing if the method is not supported
-};
